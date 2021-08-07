@@ -20,8 +20,8 @@ public class CellObject : MonoBehaviour
         _spriteRenderer.sprite = data.ObjectSprite;
         _identifier = data.ObjectIdentifier;
         if (data.RotateSprite)
-        {
-            transform.rotation = Quaternion.Euler(_additionalRotation);
-        }
+            transform.localRotation = Quaternion.Euler(_additionalRotation);
+        else
+            transform.localRotation = Quaternion.Euler(Vector3.zero);
     }
 }
